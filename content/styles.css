@@ -1,0 +1,11 @@
+.nav>li>a.ast-btn {
+    padding-bottom: 6px;
+    padding-top: 6px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.navbar-default .navbar-nav>li>a.ast-btn:hover, .navbar-default .navbar-nav>li>a.ast-btn:focus {
+    color: whitesmoke;
+    background-color: blue;
+}
