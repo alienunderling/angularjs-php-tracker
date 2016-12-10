@@ -1,4 +1,4 @@
 // ROUTES
-carApp.config(['$routeProvider', function ($routeProvider) {
+tracker.config(['$routeProvider', function ($routeProvider) {
     
 }]);
