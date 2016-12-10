@@ -14,7 +14,4 @@ tracker.controller('NavbarController', ['$scope', '$location', function($scope, 
     vm.appLogo = appLogo;
     vm.reviewPageTitle = reviewPageTitle;
     vm.apptPageTitle = apptPageTitle;
-    /**
-    * Handle the submissions
-    */
 }]);
