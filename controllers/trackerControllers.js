@@ -5,7 +5,7 @@
 * This controller handles the navigation and header
 * Uses the 'controller as' notation for practice.
 */
-tracker.controller('NavbarController', ['$scope', '$location', function($scope, $location ) {
+tracker.controller('NavbarController', ['$scope', '$log', function($scope, $log ) {
     var vm = this;
     var appLogo = "Vehicle Maintenance Scheduler";
     var apptPageTitle = "Schedule a Service";
@@ -14,4 +14,12 @@ tracker.controller('NavbarController', ['$scope', '$location', function($scope, 
     vm.appLogo = appLogo;
     vm.reviewPageTitle = reviewPageTitle;
     vm.apptPageTitle = apptPageTitle;
+    $log.info('NavbarController initiated.');
+}]);
+
+/**
+* 
+*/
+tracker.controller('mainController', ['$scope', '$location', '$log', function($scope, $location, $log ) {
+    $log.info($location.path());
 }]);
