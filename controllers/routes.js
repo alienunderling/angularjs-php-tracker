@@ -9,11 +9,11 @@ tracker.config(['$routeProvider', function ($routeProvider) {
         controller: ''//'addServiceController'
     })    
     .when('/viewAppointments', {
-        templateUrl: 'manager/components/viewAppts.html',
+        templateUrl: 'manager/components/manager.html',
         controller: ''//'appointmentsController'
     })    
     .when('/serviceAdded', {
-        templateUrl: 'manager/components/serviceAdded.html',
+        templateUrl: 'manager/components/manager.html',
         controller: ''//'serviceAddedController'
     })     
     .when('/addVehicle', {
