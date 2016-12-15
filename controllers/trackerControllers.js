@@ -20,6 +20,15 @@ tracker.controller('NavbarController', ['$scope', '$log', function($scope, $log 
 /**
 * 
 */
-tracker.controller('mainController', ['$scope', '$location', '$log', function($scope, $location, $log ) {
-    $log.info($location.path());
+tracker.controller('mainController', ['$scope', '$log', function($scope, $log ) {
+    $log.info('mainController initiated.');
+}]);
+
+/**
+* 
+*/
+tracker.controller('addVehicleController', ['$scope', '$log', function($scope, $log ) {
+    $log.info('addVehicleController initiated.');
+    
+    $scope.make = "";
 }]);
