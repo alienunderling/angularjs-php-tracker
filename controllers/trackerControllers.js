@@ -32,3 +32,12 @@ tracker.controller('addVehicleController', ['$scope', '$log', function($scope, $
     
     $scope.make = "";
 }]);
+
+/**
+* 
+*/
+tracker.controller('addCustomerController', ['$scope', '$log', function($scope, $log ) {
+    $log.info('addCustomerController initiated.');
+    
+    $scope.firstName = "";
+}]);
