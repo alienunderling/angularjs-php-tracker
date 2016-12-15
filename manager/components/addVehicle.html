@@ -1,3 +1,25 @@
-<div>
-	This is the View Appointments template...
-</div>
+<div ng-controller="addVehicleController">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="header">Add a New Vehicle</div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="content">
+                <label>Make</label>
+                <input type="text" ng-model="make" /> </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="content bg-alt">
+                <h4>Make: {{make}}</h4> </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="footer"> <a ng-cloak class="ast-btn btn btn-default">Save</a>
+            </div>
+        </div>
+    </div>
