@@ -27,10 +27,16 @@ tracker.controller('mainController', ['$scope', '$log', function($scope, $log ) 
 /**
 * 
 */
-tracker.controller('addVehicleController', ['$scope', '$log', function($scope, $log ) {
+tracker.controller('addVehicleController', ['$scope', '$log', 'carService', function($scope, $log, carService ) {
     $log.info('addVehicleController initiated.');
     
-    $scope.make = "";
+    $scope.make = carService.getCurrentMake();
+    
+    $scope.$watch('make', function () {
+       carService.updateMake($scope.make); 
+    });
+                                            
+    $log.log(carService.getMakeByID());
 }]);
 
 /**
