@@ -1,21 +1,28 @@
-// ROUTES
 tracker.config(['$routeProvider', function ($routeProvider) {
     $routeProvider    
     .when('/', {
-        templateUrl: '',
+        templateUrl: 'manager/components/manager.html',
         controller: ''//'homePageController'
     })
     .when('/addService', {
-        templateUrl: '',
+        templateUrl: 'serviceScheduler/components/addService.html',
         controller: ''//'addServiceController'
     })    
     .when('/viewAppointments', {
-        templateUrl: '',
+        templateUrl: 'manager/components/manager.html',
         controller: ''//'appointmentsController'
     })    
     .when('/serviceAdded', {
-        templateUrl: '',
+        templateUrl: 'manager/components/manager.html',
         controller: ''//'serviceAddedController'
-    })    
+    })     
+    .when('/addVehicle', {
+        templateUrl: 'manager/components/addVehicle.html',
+        controller: ''//'serviceAddedController'
+    })     
+    .when('/addCust', {
+        templateUrl: 'manager/components/addCust.html',
+        controller: ''//'serviceAddedController'
+    })  
     .otherwise({ redirectTo: '/' });
 }]);

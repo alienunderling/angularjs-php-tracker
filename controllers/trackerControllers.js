@@ -20,6 +20,30 @@ tracker.controller('NavbarController', ['$scope', '$log', function($scope, $log 
 /**
 * 
 */
-tracker.controller('mainController', ['$scope', '$location', '$log', function($scope, $location, $log ) {
-    $log.info($location.path());
+tracker.controller('mainController', ['$scope', '$log', function($scope, $log ) {
+    $log.info('mainController initiated.');
+}]);
+
+/**
+* 
+*/
+tracker.controller('addVehicleController', ['$scope', '$log', 'carService', function($scope, $log, carService ) {
+    $log.info('addVehicleController initiated.');
+    
+    $scope.make = carService.getCurrentMake();
+    
+    $scope.$watch('make', function () {
+       carService.updateMake($scope.make); 
+    });
+                                            
+    $log.log(carService.getMakeByID());
+}]);
+
+/**
+* 
+*/
+tracker.controller('addCustomerController', ['$scope', '$log', function($scope, $log ) {
+    $log.info('addCustomerController initiated.');
+    
+    $scope.firstName = "";
 }]);
