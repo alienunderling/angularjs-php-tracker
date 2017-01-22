@@ -1,63 +1,80 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="tracker">
-    <head>
-        <title>Vehicle Maintenance Scheduler</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
-        <link href="content/styles.css" rel="stylesheet" />
-    </head>
-    <body ng-cloak>
-        <header>
-			<nav ng-cloak class="navbar navbar-default" ng-controller="NavbarController as vm">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a style="color: #428bca" class="navbar-brand" href="#/tracker">{{vm.appLogo}}</a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a ng-cloak class="ast-btn btn btn-default" href="#/addService">{{vm.apptPageTitle}}</a></li>
-                        <li><a ng-cloak class="ast-btn btn btn-default" href="#/viewAppointments">{{vm.reviewPageTitle}}</a></li>
-                    </ul>
-                </div>
-			</nav>
-		</header>
 
-        <div class="container">
-            <div ng-view></div>
-        </div>
-    <!--
-        <div id="footer">
-            <div class="navbar navbar-fixed-bottom">
-                <div class="navbar-inner footer">
+<head>
+    <title>Vehicle Maintenance Scheduler</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <link href="content/styles.css" rel="stylesheet" /> </head>
+
+<body ng-cloak>
+    <div class="section header">
+        <h1 ng-cloak class="navbar-header" ng-controller="NavbarController as vm">{{vm.appLogo}}
+        </h1> </div>
+    <div class="accordion">
+        <ul>
+            <li ng-controller="mainController as vm">
+                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('viewAppointments')" />
+                <div class="accordion-title"> <span>View an Appointment</span> </div>
+                <div class="accordion-content">
                     <div class="container">
-                        <footer>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    Created by <a href="" target="_blank">Dale Mervyn</a>
-                                </div>
-                            </div>
-                        </footer>
+                        <div ng-view> </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    -->
-        <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-        <style>
-            html, body, input, select, textarea
-            {
-                font-size: 1.05em;
-            }
-        </style>
-        <!-- load angular via CDN -->
-        <script src="https://code.angularjs.org/1.5.0-rc.1/angular.js"></script>
-        <script src="https://code.angularjs.org/1.5.0-rc.1/angular-messages.js"></script>
-        <script src="https://code.angularjs.org/1.5.0-rc.1/angular-resource.min.js"></script>
-        <script src="https://code.angularjs.org/1.5.0-rc.1/angular-route.min.js"></script>
-        <script src="app/tracker.js"></script>
-        <script src="common/services/localStorageService/LocalStorageService.js"></script>
-        <script src="common/services/carService/CarService.js"></script>
-        <script src="controllers/trackerControllers.js"></script>
-        <script src="controllers/routes.js"></script>
-    </body>
+                <div class="accordion-separator"></div>
+            </li>
+            <li ng-controller="addServiceController as vm">
+                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('addService')" />
+                <div class="accordion-title"> <span>Schedule a Service</span> </div>
+                <div class="accordion-content">
+                    <div class="container">
+                        <div ng-view> </div>
+                    </div>
+                </div>
+                <div class="accordion-separator"></div>
+            </li>
+            <li ng-controller="addVehicleController as vm">
+                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('addVehicle')" />
+                <div class="accordion-title"> <span>{{vm.title}}</span> </div>
+                <div class="accordion-content">
+                    <div class="container">
+                        <div ng-view> </div>
+                    </div>
+                </div>
+                <div class="accordion-separator"></div>
+            </li>
+            <li ng-controller="addCustomerController as vm">
+                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('addCust')" />
+                <div class="accordion-title"> <span>{{vm.title}}</span> </div>
+                <div class="accordion-content">
+                    <div class="container">
+                        <div ng-view> </div>
+                    </div>
+                </div>
+                <div class="accordion-separator"></div>
+            </li>
+            <li ng-controller="mainController as vm">
+                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('home')" />
+                <div class="accordion-title"> <span>Home</span> </div>
+                <div class="accordion-content">
+                    <div class="container">
+                        <div ng-view> </div>
+                    </div>
+                </div>
+                <div class="accordion-separator"></div>
+            </li>
+        </ul>
+    </div>
+    <!-- load angular via CDN -->
+    <script src="https://code.angularjs.org/1.5.0-rc.1/angular.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.1/angular-messages.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.1/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.1/angular-route.min.js"></script>
+    <script src="app/tracker.js"></script>
+    <script src="common/services/localStorageService/LocalStorageService.js"></script>
+    <script src="common/services/carService/CarService.js"></script>
+    <script src="controllers/trackerControllers.js"></script>
+    <script src="controllers/routes.js"></script>
+</body>
+
 </html>

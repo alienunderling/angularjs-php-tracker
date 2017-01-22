@@ -1,0 +1,192 @@
+/**
+* Navbar
+**/
+div.navbar-header a {
+    color: #428bca;  
+}
+
+.section {
+    margin: 0 auto;
+    width: 870px;
+}
+
+.header {
+    padding: 25px 0;
+}
+
+h1 {
+    color: #568EEA;
+    font-size: 26px;
+    text-shadow: 1px 1px 0 #FFF;
+    padding-left: 15px;
+}
+
+/**
+* Buttons
+**/
+.trkDftBtn {
+	-moz-box-shadow: 4px 3px 4px 0px #899599;
+	-webkit-box-shadow: 4px 3px 4px 0px #899599;
+	box-shadow: 4px 3px 4px 0px #899599;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
+	background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+	background-color:#ededed;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#21859e;
+	font-family:Verdana;
+	font-size:11px;
+	padding:3px 14px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #e1e2ed;
+}
+.trkDftBtn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+	background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+	background-color:#bab1ba;
+}
+.trkDftBtn:active {
+	position:relative;
+	top:1px;
+}
+
+/**
+* Accordian
+**/
+.accordion {
+    -webkit-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
+    -moz-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
+    box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #505050;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 8px;
+    margin: 0 auto;
+    height: 380px;
+    width: 1095px;
+}
+
+.accordion > ul > li,
+.accordion-title,
+.accordion-content,
+.accordion-separator {
+    float: left;
+}
+
+.accordion > ul > li {
+    background-color: #1f1f1f;
+    margin-right: -890px;
+    margin-bottom: -0px;
+}
+
+.accordion-select:checked ~ .accordion-separator {
+    margin-right: 890px;
+    margin-bottom: 0px;
+}
+
+.accordion-title,
+.accordion-select  {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    width: 40px;
+    height: 380px;
+    font-size: 16px;
+}
+
+.accordion-title span {
+    margin-bottom: 20px; 
+    margin-left: 20px;
+}
+
+.accordion-select:hover ~ .accordion-title,
+.accordion-select:checked ~ .accordion-title {
+    background-color: #3068cc;
+}
+
+.accordion-title span  {	
+    transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-writing-mode: lr-bt;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    margin-left: 0px;
+    line-height: 40px;
+}
+
+.accordion-content {
+    background-color: #3e3e3e;
+    color: #f5f2f0;
+    height: 308px;
+    width: 818px;
+    padding: 36px;
+}
+
+.accordion-title,
+.accordion-select:checked ~ .accordion-content {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+/* Do not change following properties, they aren't 
+generated automatically and are common for each slider. */
+.accordion {
+    overflow: hidden;
+}
+
+.accordion > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 101%;
+}
+
+.accordion > ul > li,
+.accordion-title {
+    position: relative;
+}
+
+.accordion-select {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.accordion-title span {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.accordion-content {
+    position: relative;
+    overflow: auto;
+}
+
+.accordion-separator {
+    transition: margin 0.3s ease 0.1s;
+    -o-transition: margin 0.3s ease 0.1s;
+    -moz-transition: margin 0.3s ease 0.1s;
+    -webkit-transition: margin 0.3s ease 0.1s;
+}
