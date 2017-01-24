@@ -1,12 +1,12 @@
-tracker.service('carService', ['localStorageService', '$log', function (localStorageService, $log) {
+tracker.service('CarService', ['localStorageService', '$log', function (localStorageService, $log) {
     var self = this;
     
-    this.make = localStorageService.getCurrentMake();
+    //this.make = localStorageService.getCurrentMake();
     
     this.getMakeByID = function (id) {
-        $log.log("Car Service: getMakeByID: " + localStorageService.getMakeByID(id));
+        $log.log("Car Service: getMakeByID: " + );
         
-        return localStorageService.getMakeByID(id);  
+        //return localStorageService.getMakeByID(id);  
     };
     
     this.getCurrentMake = function () {
