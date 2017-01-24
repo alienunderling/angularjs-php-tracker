@@ -4,7 +4,7 @@ tracker.service('CustomerService', ['localStorageService', '$timeout', '$log', f
     //  We have a function on the scope that can update the customer list.
     self.getCustomerList = function() {
         //returns promise so we can just pass it along
-        return localStorageService.getCustomers();
+        return localStorageService.get();
       };
     
     this.getCurrentMake = function () {

@@ -1,6 +1,6 @@
 //    A little bit of data needed to get started
 //get this from a file, since no db for now.
-var customerSeedData = encodeURIComponent(angular.toJson({
+var seedData = encodeURIComponent(angular.toJson({
     customer1: {"firstName": "Dave",
                 "id": 1
                },
@@ -8,36 +8,36 @@ var customerSeedData = encodeURIComponent(angular.toJson({
                 "id": 2
                }
 }));
-var initialCustomers = 2;
+var initialObjCount = 2;
 
 /**
 * TODO: pull out the storing of data to another service?
 */
 tracker.service('localStorageService', ['$log', '$q', '$timeout', '$localStorage', function ($log, $q, $timeout, $localStorage) {
     var self = this;
-    self.customerList = {};
+    self.applicationData = {};
     
-    $localStorage.customerList = customerSeedData;
+    $localStorage.applicationData = seedData;
     
-    $localStorage.customerCount = initialCustomers;
+    $localStorage.initialObjCount = initialObjCount;
     
-    self.getCustomers = function() {
+    self.get = function() {
         //load Data
-        self.customerList = $localStorage.customerList;
+        self.applicationData = $localStorage.applicationData;
         
         //  Create a deferred operation.
         var deferred = $q.defer();
         
-        if(self.customerList.hasOwnProperty()) {
+        if(self.applicationData.hasOwnProperty()) {
             $log.info("In LocalStorage: retrieved from cache.");
-            deferred.resolve(self.customerList);
+            deferred.resolve(self.applicationData);
         }else {
             //timeout this to simulate going to server
             $timeout(function () {
                 $log.info("In LocalStorage: retrieved from storage.");
                 //  Get the name from the server.
-                self.customerList = $localStorage.customerList;
-                deferred.resolve(self.customerList);
+                self.applicationData = $localStorage.applicationData;
+                deferred.resolve(self.applicationData);
             }, 1000);//1 seconds to get it from server
             
          
