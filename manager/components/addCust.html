@@ -1,7 +1,7 @@
-<div ng-controller="addCustomerController as vm">
+<div ng-controller="addCustomerController as custModel">
     <div class="row">
         <div class="col-sm-12">
-            <div class="header">Add a New Customer</div>
+            <div class="header">{{custModel.pageTitle}}</div>
         </div>
     </div>
     <hr>
@@ -9,30 +9,33 @@
         <div class="col-sm-6">
             <div class="content">
                 <label>First Name</label>
-                <input type="text" ng-model="firstName" /> 
+                <input type="text" ng-model="custModel.customer.firstName" />
                 <label>Last Name</label>
-                <input type="text" ng-model="lastName" /> 
-            </div>
+                <input type="text" ng-model="custModel.customer.lastName" />
+                <hr>
+                <label>Address</label>
+                <input type="text" ng-model="custModel.customer.address" /> </div>
         </div>
         <div class="col-sm-6">
             <div class="content bg-alt">
-                <h4>First Name: {{firstName}}      Last Name: {{lastName}}</h4> 
-            </div>
+                <h4>First Name: {{custModel.customer.firstName}}      Last Name: {{custModel.customer.lastName}}</h4>
+                <h4>Address:  {{custModel.customer.address}}</h4> </div>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-sm-12">
-            <div class="footer"> <a ng-cloak class="ast-btn btn trkDftBtn">Save</a> </div>
+            <div class="footer">
+                <button class="ast-btn btn trkDftBtn" ng-click="custModel.save()">Save Customer</button>
+                <hr>
+                <button class="ast-btn btn trkDftBtn" ng-click="custModel.getCustomerList()">{{custModel.listLabel}}</button>
+                <div ng-show="custModel.showMe">
+                    <h3>Customers</h3>
+                    <ul ng-repeat="customer in custModel.customerList">
+                        <li>Customer {{customer.id}}: {{customer.firstName}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    <hr>
-    <button class="ast-btn btn trkDftBtn" ng-click="vm.showMeTestFunc()">Load Customer list</button>
-
-    <div ng-show="vm.showMe">
-        <h3>Customers</h3>
-        <ul ng-repeat="customer in vm.customerList">
-            <li>Customer {{customer.id}}: {{customer.firstName}}</li>
-        </ul>
-    </div>
-</div>
+    <hr> </div>

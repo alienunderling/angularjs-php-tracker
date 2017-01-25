@@ -7,15 +7,13 @@ tracker.service('CustomerService', ['localStorageService', '$timeout', '$log', f
         return localStorageService.get();
       };
     
-    this.getCurrentMake = function () {
-        $log.log("Car Service: getCurrentMake: " + this.make);
-        
-        return this.make;
+    this.getCustomerByID = function (id) {
+        $log.log("Car Service: getCustomerByID: " + id);
+        return localStorageService.get();
     };
     
-    this.updateMake = function (make) {
-      this.make = make;
-        $log.log("Car Service: updateMake: " + this.make);
+    this.saveCustomer = function (customer) {
+        return localStorageService.saveObj(customer);
     };
 }]);
 

@@ -9,13 +9,13 @@
 
 <body ng-cloak>
     <div class="section header">
-        <h1 ng-cloak class="navbar-header" ng-controller="NavbarController as vm">{{vm.appLogo}}</h1> 
+        <h1 ng-cloak class="navbar-header" ng-controller="NavbarController as nav">{{nav.appLogo}}</h1> 
     </div>
     <div class="accordion">
         <ul>
-            <li ng-controller="viewApptController as vm">
-                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('viewAppointments')" />
-                <div class="accordion-title"> <span>{{vm.title}}</span> </div>
+            <li ng-controller="viewApptController as apptModel">
+                <input class="accordion-select" type="radio" name="select" ng-click="apptModel.changeView('viewAppointments')" />
+                <div class="accordion-title"> <span>{{apptModel.title}}</span> </div>
                 <div class="accordion-content">
                     <div class="container">
                         <div ng-view> </div>
@@ -43,9 +43,9 @@
                 </div>
                 <div class="accordion-separator"></div>
             </li>
-            <li ng-controller="addCustomerController as vm">
-                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('addCust')" />
-                <div class="accordion-title"> <span>{{vm.title}}</span> </div>
+            <li ng-controller="addCustomerController as custModel">
+                <input class="accordion-select" type="radio" name="select" ng-click="custModel.changeView('addCust')" />
+                <div class="accordion-title"> <span>{{custModel.title}}</span> </div>
                 <div class="accordion-content">
                     <div class="container">
                         <div ng-view> </div>
@@ -53,9 +53,9 @@
                 </div>
                 <div class="accordion-separator"></div>
             </li>
-            <li ng-controller="mainController as vm">
-                <input class="accordion-select" type="radio" name="select" ng-click="vm.changeView('home')" />
-                <div class="accordion-title"> <span>{{vm.title}}</span> </div>
+            <li ng-controller="mainController as mainModel">
+                <input class="accordion-select" type="radio" name="select" ng-click="mainModel.changeView('home')" />
+                <div class="accordion-title"> <span>{{mainModel.title}}</span> </div>
                 <div class="accordion-content">
                     <div class="container">
                         <div ng-view> </div>
